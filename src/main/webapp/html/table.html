@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/table.css" />
+<script src="/WEBTest/js/scoreData.js"></script>
+</head>
+<body>
+	<div>
+		<table>
+			<caption>학점현황</caption>
+			<colgroup>
+				<col width="100" />
+				<col width="60" />
+				<col width="60" />
+				<col width="60" />
+				<col width="60" />
+				<col width="60" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th>학번</th>
+					<th>수학</th>
+					<th>영어</th>
+					<th>총점</th>
+					<th>평균</th>
+					<th>석차</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<th id="10"></th>
+						<td id="11"></td>
+						<td id="12"></td>
+						<td id="13"></td>
+						<td id="14"></td>
+						<td></td>
+				</tr>
+				<tr>
+					<th id="20"></th>
+						<td id="21"></td>
+						<td id="22"></td>
+						<td id="23"></td>
+						<td id="24"></td>
+						<td></td>
+				</tr>
+				<tr>
+					<th id="30"></th>
+						<td id="31"></td>
+						<td id="32"></td>
+						<td id="33"></td>
+						<td id="34"></td>
+						<td></td>
+				</tr>
+			
+			</tbody>
+
+			<tfoot>
+				<tr>
+					<th>과목총점</th>
+					<td id="41"></td>
+					<td id="42"></td>
+					<td class="empty" colspan="3"></td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+	<div>
+		<div>
+			<button onclick="processJSCSV();">JS-CSV</button>
+			<button onclick="processJSJSON();">JS-JSON</button>
+			<button onclick="processJSXML();">JS-XML</button>
+			<button>JQuery-CSV</button>
+			<button>JQuery-JSON</button>
+			<button>JQuery-XML</button>
+			<button>INIT</button>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+

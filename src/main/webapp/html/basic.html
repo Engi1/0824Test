@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href= "../css/main.css"/>
+<script src = "https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="../js/main.js"></script>
+<script>
+$(function(){ 
+	
+	$.get("/WEBTest/xml/books.xml",null,function(data,textStatus,xhr){
+		alert(textStatus);		
+	});
+});
+</script>
+</head>
+<body>
+<div>
+	<p id="xmlPara"></p>
+	<p id="jsonPare"></p>
+</div>
+
+<div>
+	<p>hello html!</p>
+	<p>
+	<img src="/WEBTest/images/1.png" /><!--절대경로--> 
+	<img src="https://storage.googleapis.com/static.fastcampus.co.kr/prod/uploads/202106/153245-380/coloso-illust-rojo-portfollio4.png" /><!--절대경로--> 
+	<img src= "../images/1.png"/ ><!--절대경로-->
+	</p>
+</div>
+
+</body>
+</html>

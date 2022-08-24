@@ -1,0 +1,95 @@
+@charset "UTF-8";
+/*
+	1.inline element / block element
+	1)inline : 한행 에 엘리먼트들을 배치, 자신의 영역이 없음.
+	2)block : 엘리먼트 배치시에 하단으로 배치, 자신의 영역이 있다
+	2.floating(float 속성)
+		블락 엘리먼트 배치시에 어디에 위치시킬지 결정
+		ex)float: left;   //왼쪽에 배치
+		   float: right; // 오른쪽에 배치
+	3.clear
+		floating을 해제
+		ex) clear: left; 왼쪽으로 배치 해제
+			clear: right; 오른쪽배치 해제
+			clear: both;양쪽배치 해제
+	4.Positioning(position 속성)
+		블락엘리먼트 상호간에 배치
+		position:relative; 상대적위치를 결정. 상위엘리먼트 기준
+							상위엘리먼트가 없다면 body 기준
+		position:avsoluet; body로 부터 위치를 결정
+		position:fixed;	특정 좌표에 고정
+		
+		
+			
+*/
+body, div {
+	padding: 0;
+	margin: 0;
+}
+
+.box {
+	width: 200px;
+	height: 200px;
+}
+
+.top {
+	width: 300px;
+	height: 300px;
+}
+
+#content {
+	
+}
+
+#top1 {
+	background-color: #FFCCff;
+	position: absolute;
+	margin: 200px 200px 0px 200px;
+}
+
+#box1 {
+	background-color: #FFCC00;
+	position: absolute;
+}
+
+#box2 {
+	background-color: #00CCFF;
+	position: absolute;
+	margin: 200px 200px 0px 200px;
+}
+
+#box3 {
+	background-color: #ff9999;
+	position: absolute;
+	margin: 400px 200px 0px 400px;
+}
+
+#box4 {
+	background-color: #FF69B4;
+	position: absolute;
+	margin: 100px 100px 0px 100px;
+}
+
+#box5 {
+	background-color: #FC10AA;
+	position: absolute;
+	margin: 0px 0px 0px 400px;
+}
+
+#box6 {
+	background-color: #C1CC00;
+	position: absolute;
+	margin: 400px 0px 0px 0px;
+}
+
+#box7 {
+	background-color: #A1BAAA;
+	position: absolute;
+	margin: 300px 300px 0px 300px;
+}
+
+#box8 {
+	background-color: #FFBBBB;
+	position: absolute;
+	margin: 100px 100px 0px 100px;
+}

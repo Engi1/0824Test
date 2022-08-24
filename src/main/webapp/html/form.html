@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form 엘리먼트 연습</title>
+<style>
+	input,button{display:block;margin-bottom:10px;}
+	input[type="radio"],input[type="reset"],input[type="submit"]
+	{display:inline;}
+</style>
+<script>
+	function checkForm(){
+		if(document.forms["userData"].txt1.value==""){
+			alert("첫번째 텍스트상자에 텍스트를 입력하세요!");
+			return false;
+		}
+		document.forms["userDate"].submit();
+	}
+</script>
+</head>
+<body>
+<form name="userData"action="../jsp/formProc.jsp">
+	<input type ="text"name="txt1"/>
+	<input type="password"name="pwd1"/>
+	<input type="button"value="버튼1"/>
+	<input type="checkbox"name="cb1"/>
+	<input type="radio"name="rd1" value="0"/>
+	<input type="radio"name="rd1" value="1"/><br/>
+	<textarea name="ta1"></textarea>
+	<button>버튼2</button>
+	<hr/>
+	<input type="reset"value="취소"/>&nbsp;
+	<button id = "formSubmit">전송</button>
+</form>
+</body>
+</html>

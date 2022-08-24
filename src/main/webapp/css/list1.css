@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+ul{
+	list-style-type:square; 
+	position:relative;
+}
+
+ul li{	float:left; wight:80px;}
+ol{	clart: both;}
+ol li{	}
+dl{	}
+dl li{	}

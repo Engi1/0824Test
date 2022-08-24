@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+ul{
+	list-style-type:square; 
+	position:relative;
+}
+ul li{float:left; width:100px;}
+ol{clear:both;}
+ol li{float:left;width:100px;}
+dl{position:relative;clear:both;}
+dt{float:left;font-weight:bold;}
+dd{float:left;font-style:italic;}
+hr{clear:both; visibility:hidden;}

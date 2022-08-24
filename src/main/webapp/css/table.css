@@ -1,0 +1,16 @@
+@charset "UTF-8";
+table{width:400px;border:1px solid #ccc;
+border-collapse:collapse;}
+caption{font-size:20px;text-decoration:underline;
+}
+thead{}
+tbody{}
+tfoot{}
+tr{}
+th, td{border:1px solid #000000;}
+th{background-color: #eeeeee;}
+thead,tfoot,tr{height:30px;}
+thead tr,th,thead tr td
+{background-color:#333333; color: #ffffff;}
+
+.empty{background-color:#000000;}

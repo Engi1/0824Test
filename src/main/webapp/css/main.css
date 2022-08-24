@@ -1,0 +1,18 @@
+div{
+	width:1000px;
+	height : 80px;
+	background-color:#FFCC00;
+}
+
+p{
+	width : 800px;
+	height : 300px;
+	background-color:#0000FF;
+	
+}
+
+img{
+	width:200px;
+	height: 200px;
+	border-radius : 05;	
+}

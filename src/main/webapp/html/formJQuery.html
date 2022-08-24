@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form 엘리먼트 연습-jQuery 버전</title>
+<style>
+	input,button{display:block;margin-bottom:10px;}
+	input[type="radio"],input[type="reset"],input[type="submit"]
+	{display:inline;}
+</style>
+<script src = "https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+$(function(){
+	$("#formSubmit").click(function(){
+	if($("input[name='txt1']").val()==""){
+		alert("첫번째 박스에 값을 넣어주세요.")
+	return false;
+	}
+	else if(!$("input[name='rd1']:checked").val()){
+		alert("라디오 체크해주세요!");
+		return false;
+		//            텍스트 에어리어               
+	}else if($("textarea[name='ta1']").val().length<10){
+		alert("텍스트 에어리어에 글을 입력해 주세요!");
+		return false;
+	}else{
+		$("form[name='userData']").submit();
+	}
+});
+});
+</script>
+</head>
+<body>
+<form name="userData"action="../jsp/formProc.jsp">
+	<input type ="text"name="txt1"/>
+	<input type="password"name="pwd1"/>
+	<input type="button"value="버튼1"/>
+	<input type="checkbox"name="cb1"/>
+	<input type="radio"name="rd1" value="0"/>
+	<input type="radio"name="rd1" value="1"/><br/>
+	<textarea name="ta1"></textarea>
+	<button>버튼2</button>
+	<hr/>
+	<input type="reset"value="취소"/>&nbsp;
+	<button id = "formSubmit">전송</button>
+</form>
+</body>
+</html>
