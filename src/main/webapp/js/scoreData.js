@@ -14,7 +14,9 @@ function processJSCSV() {
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState == 4 && xhr.status == 200) {   // 객체(클라이언트)상태 && 서버(응답)상태
 				responseText = xhr.responseText;
+
 				var resultArray = responseText.split(",");
+
 				var rowIndex = 0;            //문자 앞자리
 				var columnIndex = 0;      //문자 뒷자리
 				for (i = 0; i < resultArray.length; i++) {
@@ -23,7 +25,19 @@ function processJSCSV() {
 					if (columnIndex == 0)
 						rowIndex++;
 					document.getElementById("" + rowIndex + columnIndex).innerHTML = resultArray[i];      // "" => 문자열로 만든다는 뜻.
+
+
 				}
+				z = document.getElementById("13");
+				x = document.getElementById("23");
+				c = document.getElementById("33");
+				// 1번과 2번을 뽑아와야된다.
+			 	z.innerHTML=eval(resultArray[1]+"+"+resultArray[2]);
+			 	x.innerHTML=eval(resultArray[4]+"+"+resultArray[5]);
+			 	c.innerHTML=eval(resultArray[7]+"+"+resultArray[8]);
+//이새끼잘되나 확인하는거			 	console.log(z);
+//			 	console.log(x);
+//			 	console.log(c);
 				getTotalJSCSV(responseText);
 			}
 		}
@@ -69,3 +83,6 @@ function processJSXML() {
 		xhr.send();
 	}
 }
+
+
+
