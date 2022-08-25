@@ -31,6 +31,8 @@ function processJSCSV() {
 				z = document.getElementById("13");
 				x = document.getElementById("23");
 				c = document.getElementById("33");
+				
+				
 				// 1번과 2번을 뽑아와야된다.
 			 	z.innerHTML=eval(resultArray[1]+"+"+resultArray[2]);
 			 	x.innerHTML=eval(resultArray[4]+"+"+resultArray[5]);
@@ -38,7 +40,17 @@ function processJSCSV() {
 //이새끼잘되나 확인하는거			 	console.log(z);
 //			 	console.log(x);
 //			 	console.log(c);
+
 				getTotalJSCSV(responseText);
+				
+				a = document.getElementBsyId("14");
+				s = document.getElementById("24");
+				d = document.getElementById("34");
+				
+				a.innerHTML=eval(resultArray[1]+"+"+resultArray[2])+"/"+"2";
+				console.log(a);
+				getTotalJSCSV(responseText);
+				
 			}
 		}
 		xhr.send();

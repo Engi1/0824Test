@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/ajax.js"></script>
+<script src="../js/checkbutton2.js"></script>
+<script>
+	//model 처리를 담당함 sns 모델 생성
+	var mailModel = new CheckButtonModel(false,'메일 수신');
+	var smsModel = new CheckButtonModel(true,'SMS 수신');
+
+	//window가 로딩완료 되면 수행
+	window.onload = function(){
+		
+		//View 생성 
+		var mailUI = new CheckButtonUI('receiveMail');
+		var smsUI = new CheckButtonUI('receiveSMS');
+		
+		//Controller 생성 : Controller는 모델과 뷰를 인자로 받아서
+		var mailButton = new CheckButton(mailModel,mailUI);
+		var smsButton = new CheckButton(smsModel,smsUI);
+	}
+</script>
+</head>
+<body>
+	<span id="receiveMail"></span><br/>
+	<span id="receiveSMS"></span><br/><br/>
+	
+	<button onclick="mailModel.toggle();">메일수신토글</button>
+	<button onclick="smsModel.toggle();">SMS신토글</button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

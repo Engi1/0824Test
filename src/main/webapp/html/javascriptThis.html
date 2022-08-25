@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		///////////////////////////
+		//javascript의this를 알아보자!
+		///////////////////////////
+
+		/*
+		 * 1.this : 현재 참조되고 있는 객체의 의미!
+		
+		 2.Context(컨텍스트):객체or코드 가  실행되는 환경 또는 환경에 대한 정보
+		 -자바스크립에서 function 내에서 var 키워드로 선언된 변수는 지역변수다!
+		 -var키워드로 선언된 지역변수의 컨텍스트는 function 내부이다.
+		 -global 컨텍스트 : 웹페이지 (전역변수) 
+		 -local 컨텍스트:function
+		 
+		  3.call 메소드 : 인자를 하나만, 컨텍스트를 변경해서 함수를 호출하는 메소드
+		 apply 메소드 : 인자를 여러개의 배열, 컨텍스트를 변경해서 함수를 호출하는 메소드
+		3.컨텍스트에서의 this.
+		 4.global 컨텍스트에서 this 
+		 1)global 컨텍스트에서 this=>window 
+		 2)global 함수내에서 this => window
+		 3)local 함수내의 local함수에서의 this =>window
+		 
+		 4.컨텍스트 변경(this.의 변경)을 위한 메소드
+		 call메소드
+		 */
+		//1)
+		console.log("1)" + this);
+		//2)
+		function add(i, j) {
+			console.log("2-1)" + this);
+			return i + j;
+		}
+		add(2, 3);
+
+		var func1 = function(i) {
+			console.log("2-2)" + this);
+			return i;
+		};
+
+		//3)
+		func1(3);
+
+		Member = function(name, tel) {
+			console.log("3-1)" + this);
+			this.name = name;
+			this.tel = tel;
+			this.getName = function() {
+				console.log("3-2)" + this);
+				return this.name;
+			}
+			this.getTel = function() {
+				return this.tel;
+			}
+			//this.get내가원하는 이름 = function(){}
+			this.getTotal = function() {
+				var func2 = function() {
+					console.log("4)" + this);
+					//이거 기억좀 해야될듯 암기 해야됨
+					console.log("4-ref)" + this.add(3, 5));
+					var func3 = function() {
+						console.log("4-)1" + this);
+						//신기하내 ㄹㅇ
+						console.log("4-1-ref)" + this.add(5, 6));
+					}//func3
+					func3();
+				}//func2
+				func2();
+				var func4 = function() {
+					console.log("4-2)"+this.add(1,4));
+				}//func4
+				func4();
+				var func5 = function() {
+					var func6 = function() {
+						//여기서는 this 가 window
+						console.log("6)func6 호출됨!");
+					}
+					func4();
+				}
+				func5();
+				var func6Closure =func5();
+				console.log(func6Closure);
+				func6Closure();
+				//func6();	//not defined
+			}//getTotal
+		}
+		var member = new Member("김지형", "010-1111-1111");
+		member.getName();
+		member.getTotal();
+	</script>
+</body>
+</html>
